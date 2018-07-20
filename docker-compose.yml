@@ -48,7 +48,7 @@ services:
       - mysql:zabbix-mysql
       - server:zabbix-server
     ports:
-     - "80:80"
+     - "10052:80"
     user: root
     networks:
       default:
@@ -65,7 +65,9 @@ services:
       MYSQL_DATABASE: "zabbix"
       MYSQL_USER: "zabbix"
       MYSQL_PASSWORD: "zabbix_pwd"
-      MYSQL_ROOT_PASSWORD: "root_pwd"     
+      MYSQL_ROOT_PASSWORD: "root_pwd"
+    ports:
+     - "10053:3306"   
     networks:
       default:
         aliases:
